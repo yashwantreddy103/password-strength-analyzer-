@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Strength Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Password Strength Analyzer</h2>
+        <form method="POST">
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Check Strength</button>
+        </form>
+        {% if feedback %}
+            <div class="result">
+                <strong>Strength:</strong> {{ feedback }}<br>
+                <strong>Entropy:</strong> {{ entropy }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
